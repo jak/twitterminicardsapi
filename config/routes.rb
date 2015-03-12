@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :cards
   match '/cards' => 'cards#index', via: :options
 
+  match '/check' => proc { [200, {}, ['alliswell']] }, via: :get
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
