@@ -1,1 +1,3 @@
-json.extract! @card, :id, :handle, :bio, :avatar, :created_at, :updated_at
+json.card do
+  json.extract! @card, :id, :handle, :bio, :avatar, :created_at, :updated_at
+end
