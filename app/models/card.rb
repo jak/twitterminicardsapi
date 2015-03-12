@@ -13,7 +13,7 @@ class Card < ActiveRecord::Base
 
     user = client.user(handle)
     self.bio = user.description
-    self.avatar = user.profile_image_uri_https
+    self.avatar = user.profile_image_uri_https(:original)
   end
 
 end
