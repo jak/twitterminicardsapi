@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312104033) do
+ActiveRecord::Schema.define(version: 20150326101622) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "handle"
@@ -20,5 +20,15 @@ ActiveRecord::Schema.define(version: 20150312104033) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "hashtags", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "card_id"
+    t.boolean  "print"
+  end
+
+  add_index "hashtags", ["card_id"], name: "index_hashtags_on_card_id"
 
 end

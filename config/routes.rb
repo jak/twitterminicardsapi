@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :cards
+
+  resources :cards do
+    resources :hashtags, shallow: true
+  end
   match '/cards' => 'cards#index', via: :options
 
   match '/check' => proc { [200, {}, ['alliswell']] }, via: :get

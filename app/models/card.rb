@@ -1,6 +1,8 @@
 class Card < ActiveRecord::Base
   before_create :populate_from_twitter
 
+  has_many :hashtags
+
   private
 
   def populate_from_twitter
